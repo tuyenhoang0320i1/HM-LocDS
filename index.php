@@ -1,10 +1,10 @@
 <?php
 $customer_list = array(
-    "0" => array("name" => "Mai Van Hoan", "day_of_birth" => "1983/08/20", "address" => "Ha Noi", "images/image" => "img1.jpg"),
-    "1" => array("name" => "Nguyen Van Nam", "day_of_birth" => "1983/08/21", "address" => "Bac Giang", "images/image" => "img2.jpg"),
-    "2" => array("name" => "Nguyen Thai Hoa", "day_of_birth" => "1983/08/22", "address" => "Nam Dinh", "images/image" => "img3.jpg"),
-    "3" => array("name" => "Tran Dang Khoa", "day_of_birth" => "1983/08/17", "address" => "Ha Tay", "images/image" => "img4.jpg"),
-    "4" => array("name" => "Nguyen Dinh Thi", "day_of_birth" => "1983/08/19", "address" => "Ha Noi", "images/image" => "img5.jpg")
+    "0" => array("name" => "Mai Van Hoan", "day_of_birth" => "1983/08/20", "address" => "Ha Noi", "image" => "images/img1.jpg"),
+    "1" => array("name" => "Nguyen Van Nam", "day_of_birth" => "1983/08/21", "address" => "Bac Giang", "image" => "images/img2.jpg"),
+    "2" => array("name" => "Nguyen Thai Hoa", "day_of_birth" => "1983/08/22", "address" => "Nam Dinh", "image" => "images/img3.jpg"),
+    "3" => array("name" => "Tran Dang Khoa", "day_of_birth" => "1983/08/17", "address" => "Ha Tay", "image" => "images/img4.jpg"),
+    "4" => array("name" => "Nguyen Dinh Thi", "day_of_birth" => "1983/08/19", "address" => "Ha Noi", "image" => "images/img5.jpg")
 );
 function searchByDate($customers, $from_date, $to_date)
 {
@@ -98,13 +98,11 @@ $filtered_customers = searchByDate($customer_list, $from_date, $to_date);
 
     <?php foreach ($filtered_customers as $index => $customer): ?>
         <tr>
-            <td><?php echo $index + 1; ?></td>
-            <td><?php echo $customer['name']; ?></td>
-            <td><?php echo $customer['day_of_birth']; ?></td>
-            <td><?php echo $customer['address']; ?></td>
-            <td>
-                <div class="profile"><img src="<?php echo $customer['profile']; ?>"/></div>
-            </td>
+            <td><?php echo $index + 1;?></td>
+            <td><?php echo $customer['name'];?></td>
+            <td><?php echo $customer['day_of_birth'];?></td>
+            <td><?php echo $customer['address'];?></td>
+            <td><div class="profile"><img src="<?php echo $customer['image'];?>" alt="images"/></div> </td>
         </tr>
     <?php endforeach; ?>
 </table>
